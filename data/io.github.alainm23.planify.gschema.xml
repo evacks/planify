@@ -11,9 +11,7 @@
         <value nick="Inbox" value="0" />
         <value nick="Today" value="1" />
         <value nick="Scheduled" value="2" />
-        <value nick="Pinboard" value="3" />
-        <value nick="Completed" value="4" />
-        <value nick="All Tasks" value="5" />
+        <value nick="Labels" value="3" />
     </enum>
 
     <enum id="io.github.alainm23.planify.appearance">
@@ -31,6 +29,11 @@
     <enum id="io.github.alainm23.planify.start-week">
         <value nick="Sunday" value="0" />
         <value nick="Monday" value="1" />
+        <value nick="Tuesday" value="2" />
+        <value nick="Wednesday" value="3" />
+        <value nick="Thursday" value="4" />
+        <value nick="Friday" value="5" />
+        <value nick="Saturday" value="6" />
     </enum>
 
     <enum id="io.github.alainm23.planify.new-tasks-position">

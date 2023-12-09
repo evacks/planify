@@ -1,5 +1,5 @@
 /*
-* Copyright © 2019 Alain M. (https://github.com/alainm23/planner)
+* Copyright © 2023 Alain M. (https://github.com/alainm23/planify)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -53,9 +53,7 @@ public class Widgets.Calendar.Calendar : Gtk.Box {
         current_date = new GLib.DateTime.now_local ();
 
         calendar_header = new Widgets.Calendar.CalendarHeader ();
-
         calendar_week = new Widgets.Calendar.CalendarWeek ();
-        
         calendar_view = new Widgets.Calendar.CalendarView ();
 
         append (calendar_header);
@@ -100,8 +98,12 @@ public class Widgets.Calendar.Calendar : Gtk.Box {
         var date = new GLib.DateTime.local (year_nav, month_nav, 1, 0, 0, 0);
         var firts_week = new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0);
         int start_day = firts_week.get_day_of_week () - Services.Settings.get_default ().settings.get_enum ("start-week");
-        int max_days = Util.get_default ().get_days_of_month (date.get_month (), year_nav);
+        if (start_day < 0) {
+            start_day += 7;
+        }
+        start_day = (start_day + 7) % 7;
 
+        int max_days = Util.get_default ().get_days_of_month (date.get_month (), year_nav);
         calendar_view.fill_grid_days (start_day,
                                       max_days,
                                       date.get_day_of_month (),
@@ -123,6 +125,11 @@ public class Widgets.Calendar.Calendar : Gtk.Box {
         var date = new GLib.DateTime.local (year_nav, month_nav, 1, 0, 0, 0);
         var firts_week = new DateTime.local (date.get_year (), date.get_month (), 1, 0, 0, 0);
         int start_day = firts_week.get_day_of_week () - Services.Settings.get_default ().settings.get_enum ("start-week");
+        if (start_day < 0) {
+            start_day += 7;
+        }
+        start_day = (start_day + 7) % 7;
+
         int max_days = Util.get_default ().get_days_of_month (date.get_month (), year_nav);
         calendar_view.fill_grid_days (start_day,
                                       max_days,
@@ -145,8 +152,12 @@ public class Widgets.Calendar.Calendar : Gtk.Box {
 
         var firts_week = new DateTime.local (year, month, 1, 0, 0, 0);
         int start_day = firts_week.get_day_of_week () - Services.Settings.get_default ().settings.get_enum ("start-week");
-        int max_days = Util.get_default ().get_days_of_month (current_date.get_month (), year_nav);
+        if (start_day < 0) {
+            start_day += 7;
+        }
+        start_day = (start_day + 7) % 7;
 
+        int max_days = Util.get_default ().get_days_of_month (current_date.get_month (), year_nav);
         calendar_view.fill_grid_days (
             start_day,
             max_days,

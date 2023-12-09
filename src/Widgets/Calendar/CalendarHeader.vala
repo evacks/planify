@@ -1,5 +1,5 @@
 /*
-* Copyright © 2019 Alain M. (https://github.com/alainm23/planner)
+* Copyright © 2023 Alain M. (https://github.com/alainm23/planify)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -51,7 +51,7 @@ public class Widgets.Calendar.CalendarHeader : Gtk.Box {
 
         var chevron_left_image = new Widgets.DynamicIcon ();
         chevron_left_image.size = 16;
-        chevron_left_image.update_icon_name ("chevron-left");
+        chevron_left_image.update_icon_name ("pan-start-symbolic");
         
         left_button = new Gtk.Button () {
             valign = Gtk.Align.CENTER,
@@ -60,11 +60,10 @@ public class Widgets.Calendar.CalendarHeader : Gtk.Box {
 
         left_button.child = chevron_left_image;
         left_button.add_css_class (Granite.STYLE_CLASS_FLAT);
-        // left_button.add_css_class ("no-padding");
 
         var chevron_right_image = new Widgets.DynamicIcon ();
         chevron_right_image.size = 16;
-        chevron_right_image.update_icon_name ("chevron-right");
+        chevron_right_image.update_icon_name ("pan-end-symbolic");
 
         right_button = new Gtk.Button () {
             valign = Gtk.Align.CENTER,
@@ -73,7 +72,6 @@ public class Widgets.Calendar.CalendarHeader : Gtk.Box {
 
         right_button.child = chevron_right_image;
         right_button.add_css_class (Granite.STYLE_CLASS_FLAT);
-        // right_button.add_css_class ("no-padding");
 
         var date_grid = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         date_grid.append (month_label);

@@ -1,5 +1,5 @@
 /*
-* Copyright © 2019 Alain M. (https://github.com/alainm23/planner)
+* Copyright © 2023 Alain M. (https://github.com/alainm23/planify)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -98,7 +98,6 @@ public class Widgets.DateTimePicker.TimePicker : Gtk.Grid {
 
         no_time_button.child = close_circle_icon;
         no_time_button.add_css_class (Granite.STYLE_CLASS_FLAT);
-        no_time_button.add_css_class ("p3");
 
         no_time_revealer = new Gtk.Revealer () {
             transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT,
@@ -122,7 +121,6 @@ public class Widgets.DateTimePicker.TimePicker : Gtk.Grid {
 
         add_time_button.child = add_circle_icon;
         add_time_button.add_css_class (Granite.STYLE_CLASS_FLAT);
-        add_time_button.add_css_class ("p3");
 
         time_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE

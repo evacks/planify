@@ -1,5 +1,5 @@
 /*
-* Copyright © 2019 Alain M. (https://github.com/alainm23/planner)
+* Copyright © 2023 Alain M. (https://github.com/alainm23/planify)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -26,7 +26,7 @@ public class Objects.BaseObject : GLib.Object {
     public signal void deleted ();
     public signal void updated ();
 
-    public uint update_timeout_id { get; set; default = Constants.INACTIVE; }
+    public uint update_timeout_id { get; set; default = 0; }
 
     string _id_string;
     public string id_string {

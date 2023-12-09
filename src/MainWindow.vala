@@ -1,3 +1,24 @@
+/*
+* Copyright © 2023 Alain M. (https://github.com/alainm23/planify)
+*
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public
+* License as published by the Free Software Foundation; either
+* version 3 of the License, or (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* General Public License for more details.
+*
+* You should have received a copy of the GNU General Public
+* License along with this program; if not, write to the
+* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301 USA
+*
+* Authored by: Alain M. <alainmh23@gmail.com>
+*/
+
 public class MainWindow : Adw.ApplicationWindow {
 	public weak Planify app { get; construct; }
 
@@ -336,7 +357,7 @@ public class MainWindow : Adw.ApplicationWindow {
 		Services.EventBus.get_default ().pane_selected (
 			PaneType.FILTER,
 			Util.get_default ().get_filter ().to_string ()
-			);
+		);
 	}
 
 	public void valid_view_removed (Objects.Project project) {
@@ -483,12 +504,12 @@ public class MainWindow : Adw.ApplicationWindow {
 
 		dialog.show ();
 
-		dialog.application_icon = "io.github.alainm23.planify";
+		dialog.application_icon = Constants.APPLICATION_ID;
 		dialog.application_name = "Planify";
 		dialog.version = Constants.VERSION;
-		dialog.developer_name = "Alain Meza H.";
-		dialog.website = "https://github.com/alainm23/planner";
+		dialog.developer_name = "Alain";
+		dialog.website = "https://github.com/alainm23/planify";
 		dialog.developers = { "Alain" };
-		dialog.issue_url = "https://github.com/alainm23/planner/issues";
+		dialog.issue_url = "https://github.com/alainm23/planify/issues";
 	}
 }

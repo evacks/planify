@@ -1,7 +1,26 @@
+/*
+* Copyright © 2023 Alain M. (https://github.com/alainm23/planify)
+*
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public
+* License as published by the Free Software Foundation; either
+* version 3 of the License, or (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* General Public License for more details.
+*
+* You should have received a copy of the GNU General Public
+* License along with this program; if not, write to the
+* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301 USA
+*
+* Authored by: Alain M. <alainmh23@gmail.com>
+*/
+
 public class Widgets.ScheduleButton : Gtk.Grid {
     private Gtk.Label due_label;
-
-    private Gtk.Label repeat_label;
     
     private Gtk.Box schedule_box;
     private Widgets.DynamicIcon due_image;
@@ -56,42 +75,11 @@ public class Widgets.ScheduleButton : Gtk.Grid {
                 datetime_picker.datetime = datetime;
             }
         });
-
-        //  set_child (schedule_box);
-
-        //  var gesture = new Gtk.GestureClick ();
-        //  gesture.set_button (1);
-        //  add_controller (gesture);
-
-        //  gesture.pressed.connect ((n_press, x, y) => {
-        //      gesture.set_state (Gtk.EventSequenceState.CLAIMED);
-        //      open_datetime_picker ();
-        //  });
     }
-
-    //  private void open_datetime_picker () {
-    //      if (datetime_picker == null) {
-    //          datetime_picker = new Widgets.DateTimePicker.DateTimePicker ();
-    //          datetime_picker.set_parent (this);
-                    
-    //          datetime_picker.date_changed.connect (() => {
-    //              date_changed (datetime_picker.datetime);
-    //          });
-    //      }
-
-    //      datetime_picker.visible_no_date = false;
-    //      if (datetime != null) {
-    //          datetime_picker.visible_no_date = true;
-    //          datetime_picker.datetime = datetime;
-    //      }
-
-    //      datetime_picker.popup ();
-    //  }
 
     public void update_from_item (Objects.Item item) {
         due_label.label = _("Schedule");
         tooltip_text = _("Schedule");
-        // repeat_label.label = "";
 
         due_image.update_icon_name ("planner-calendar");
         datetime = null;
